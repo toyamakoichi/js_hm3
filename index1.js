@@ -8,3 +8,4 @@ function randomInRange(min, max) {
     return numbers;
 }
 console.log(randomInRange(3, 7));
+console.log('');
