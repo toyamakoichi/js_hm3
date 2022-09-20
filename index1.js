@@ -1,11 +1,17 @@
-function randomInRange(min, max) {
+function randomInRange() {
     const numbers = {};
-    for (let i = 0; i < 10000000; i++) {
-        const num = Math.floor(Math.random() * (max - min + 1)) + min;
+    for (let i = 0; i < this.range; i++) {
+        const num = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
         if (numbers[num]) { numbers[num] += 1; }
         else { numbers[num] = 1; }
     }
     return numbers;
 }
-console.log(randomInRange(3, 7));
+const task = {
+    min: 3,
+    max: 7,
+    range: 10000000
+}
+const solution = randomInRange.bind(task);
+console.log(solution());
 console.log('');
